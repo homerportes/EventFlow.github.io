@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EventFlow - Crear Evento</title>
+  <link rel="stylesheet" href="crearEvento.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="crearEvento.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-calendar-alt"></i>
+      <span>EventFlow</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <h1>Crear un Nuevo Evento</h1>
+    <form id="eventoForm">
+      <div class="form-group">
+        <label for="titulo">Título del Evento</label>
+        <input type="text" id="titulo" placeholder="Ingresa el título" required aria-label="Título del Evento" />
+      </div>
+      
+      <div class="form-group">
+        <label for="fecha">Fecha y Hora</label>
+        <input type="datetime-local" id="fecha" required onclick="this.showPicker()" aria-label="Fecha y Hora" />
+      </div>
+      
+      <div class="form-group">
+        <label for="ubicacion">Ubicación</label>
+        <input type="text" id="ubicacion" placeholder="Ingresa la ubicación" required aria-label="Ubicación" />
+      </div>
+      
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" rows="4" placeholder="Descripción del evento" required aria-label="Descripción"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="organizador">Nombre del Organizador</label>
+        <input type="text" id="organizador" placeholder="Ingresa tu nombre" required aria-label="Nombre del Organizador" />
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" placeholder="ejemplo@correo.com" required aria-label="Correo Electrónico" />
+      </div>
+      
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="Ingresa tu teléfono" required aria-label="Teléfono" />
+      </div>
+      
+      <div class="form-buttons">
+        <button type="submit" class="btn-submit">
+          <i class="fas fa-save"></i> Guardar Evento
+        </button>
+        <button type="button" class="btn-cancel" id="btnCancelar">
+          <i class="fas fa-times"></i> Cancelar
+        </button>
+      </div>
+    </form>
+    <div id="notification" class="notification" aria-live="assertive"></div>
+  </div>
+</body>
+</html>
