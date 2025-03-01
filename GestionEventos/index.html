@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventFlow - Página Principal</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script defer src="index.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fas fa-calendar-alt"></i>
+      <span>EventFlow</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="crearEvento.html"><i class="fas fa-plus-circle"></i> Crear Evento</a></li>
+      <!-- Se elimina el enlace para asistir a eventos -->
+      <li><a href="#eventos"><i class="fas fa-calendar-week"></i> Eventos</a></li>
+      <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero-overlay">
+      <h1>Transforma tu manera de organizar eventos</h1>
+      <p>Plataforma profesional para gestión de eventos corporativos y sociales</p>
+      <div class="cta-buttons">
+        <!-- Botón que redirige a AsistirEvento.html -->
+        <button class="cta-secondary" id="btnAsistirEvento">
+          <i class="fas fa-ticket-alt"></i> Asistir a Evento
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Eventos -->
+  <section class="events-section" id="eventos">
+    <h2 class="section-title">Próximos Eventos</h2>
+    <div class="events-grid"></div>
+  </section>
+
+  <!-- Notificaciones -->
+  <div class="notification" id="notification" aria-live="assertive"></div>
+</body>
+</html>

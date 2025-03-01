@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #2D4263;
+    --secondary-color: #C84B31;
+    --accent-color: #ECDBBA;
+    --bg-dark: #191919;
+    --bg-medium: #2D2D2D;
+    --text-light: #ECECEC;
+    --text-dark: #1A1A1A;
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--bg-medium);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+.logo i {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 76px;
+    padding: 8rem 5%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Sección de Eventos */
+.events-section {
+    padding: 4rem 5%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background: var(--bg-medium);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Botones en la tarjeta */
+.event-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-attend,
+.btn-delete {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.btn-attend {
+    background-color: #388E3C;
+}
+
+.btn-delete {
+    background-color: #B71C1C;
+}
+
+/* Notificaciones */
+.notification {
+    background: var(--bg-medium);
+    color: var(--text-light);
+    border: 1px solid var(--primary-color);
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-medium);
+        padding: 1rem;
+    }
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    .hamburger {
+        display: block;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
